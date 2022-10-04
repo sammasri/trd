@@ -1,0 +1,24 @@
+IndexError                                Traceback (most recent call last)
+<ipython-input-13-1521e94279f9> in <module>
+    248       if handle.is_finished() or (wantedbytes > 10000 and donebytes == wantedbytes):
+    249         info(f'{handle.name()} finished downloading.')
+--> 250         transfer_files(handle, log = status_log, copy= False, v= False)
+    251         Remove_Active_View(index)
+    252         completed.append(handle)
+
+1 frames
+<ipython-input-1-5ad2abc19f96> in transfer_files(handle, log, copy, v)
+   3040     p2 = p2 + attr.save_name
+   3041 
+-> 3042   pre_transfer(attr, p2)
+   3043 
+   3044   if attr.type_ == Types.Episode and os.path.isdir(p2):
+
+<ipython-input-1-5ad2abc19f96> in pre_transfer(attr, path)
+   2962     to_base = attr.save_dir + p01
+   2963     info(f"    .{base}/")
+-> 2964     for file in item[1]:
+   2965       p02 = base + '/' + file
+   2966       s01 = pathsize(p02)
+
+IndexError: list index out of range
